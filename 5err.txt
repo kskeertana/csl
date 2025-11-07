@@ -1,0 +1,1 @@
+gcc -g -O0 -fno-stack-protector -no-pie -Wno-error=implicit-function-declaration overflow.c -o overflow
