@@ -1,0 +1,52 @@
+Adapter 1:
+Attached to: Bridged Adapter
+Promiscuous Mode: Allow All
+Cable Connected: y
+sudo wireshark eth0
+dns,tls,ip.addr == 18.161.216.37;,tcp.port == 443
+sudo service apache2 start
+sudo mkdir -p /var/www/html/testlogin
+cd /var/www/html/testlogin
+
+    <form action="login.php" method="post">
+        Password: <input type="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    
+<?php
+$password = $_POST['password'];
+echo "Password: " . $password . "<br>";
+?>
+http://127.0.0.1/testlogin/login.html loopback http.request.method == "POST"
+
+5 gcc -g -O0 -fno-stack-protector –no-pie overflow.c –o overflow
+gcc Wno-implicit-function-declaration o.c -o o      ./o
+
+
+7 diff file1.txt file2.txt, cmp -l , meld, vimdiff, diff -u file1.txt file2.txt > diff_report.txt
+
+mkdir -p ~/acq_demo/victim_docs
+echo 'this is a test secret.' > ~/acq_demo/victim_docs/secret.txt
+cat ~/acq_demo/victim_docs/secret.txt
+chmod +x ~/acq_demo/simulate_malware.sh
+bash -x ~/acq_demo/simulate_malware.sh
+ls -l /tmp/exfil/payload.zip
+ls -l ~/acq_demo/cover1.jpg
+steghide embed -cf ~/acq_demo/cover1.jpg -ef /tmp/exfil/payload.zip -p demo-pass
+steghide info ~/acq_demo/cover1.jpg
+mkdir -p ~/.hidden_store
+mv ~/acq_demo/cover1.jpg ~/.hidden_store/.cover1.jpg
+ls -la ~/.hidden_store
+steghide extract -sf ~/.hidden_store/.cover1.jpg -p demo-pass -xf /tmp/recovered_payload.zip
+unzip -P pass123 /tmp/recovered_payload.zip -d /tmp/recovered_payload
+cat /tmp/recovered_payload/secret.txt
+
+sudo apt install -y docker.io
+sudo systemctl enable --now docker
+sudo docker run --rm -d --name dvwa -p 8080:80 vulnerables/web-dvwa
+http://127.0.0.1:8080/
+127.0.0.1; echo INJECTION_SUCCESS
+127.0.0.1 && uname –a
+127.0.0.1; ping -c 2 127.0.0.1
+cURL add ip=127.0.0.1; echo INJECTION_SUCCESS
+add 2>/dev/null | grep -C2 INJECTION_SUCCESS || echo "marker not found";
+sudo docker exec -it dvwa bash -lc 'tail -n 120 /var/log/apache2/access.log';
